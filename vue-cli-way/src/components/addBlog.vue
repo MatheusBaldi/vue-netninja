@@ -25,6 +25,11 @@
 
       </div>
 
+      <label>Author:</label>
+      <select v-model="blog.author">
+        <option v-bind:key="index" v-for="(author, index) in authors">{{ author }}</option>
+      </select>
+
     </form>
     <div id="preview">
       <h3>Preview Blog</h3>
@@ -35,6 +40,7 @@
       <ul>
         <li v-bind:key="index" v-for="(category, index) in blog.categories">{{ category }}</li>
       </ul>
+      <p>Author: {{ blog.author }}</p>
     </div>
     
 </div>
@@ -52,8 +58,10 @@ export default{
       blog: {
         title: '',
         content: '',
-        categories: []
-      }
+        categories: [],
+        author: ''
+      },
+      authors: ['The Net Ninja', 'The Angular Avenger', 'The Vue Vindicator']
     }
   },
   methods: {
