@@ -8,7 +8,8 @@ Vue.use(VueResource);
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-  routes: Routes
+  routes: Routes,
+  mode: 'history'
 });
 
 // Filter
@@ -29,5 +30,5 @@ export const bus = new Vue();
 
 new Vue({
   render: h => h(App),
-  router: router
+  router
 }).$mount('#app');
